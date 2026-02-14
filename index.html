@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Untuk Ghufron Alghozy</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@300;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+
+    <div class="container">
+      <!-- HERO / INTRO -->
+      <section class="card hero reveal">
+        <div class="header">
+          <div class="heart-icon">❤️</div>
+          <h1>Happy Valentine,<br />Abang Al</h1>
+        </div>
+
+        <div class="message">
+          <p>
+            Dulu, mungkin duniaku hanya monokrom, tapi bagiku sekarang,
+            <b>kamu adalah spektrum warna</b> yang paling aku syukuri
+            kehadirannya.
+          </p>
+
+          <p>
+            Selamat Hari Valentine. Maaf ya kalau ucapannya sedikit terlambat—
+            tapi bagiku, tidak pernah ada kata terlambat untuk seseorang yang
+            begitu berarti.
+          </p>
+
+          <p>
+            Tetaplah jadi sosok yang ade kenal sejak awal—sederhana, hangat, dan
+            selalu pulang ke sini. Di caramu mencintai, ade menemukan definisi
+            bahagia yang sebenarnya.
+          </p>
+
+          <p><i>Happy Valentine's Day, Ghufron Alghozy.</i></p>
+        </div>
+      </section>
+
+      <!-- QUOTE / LYRICS STATIC -->
+      <section class="card quote-card reveal">
+        <div class="lyrics-container">
+          <p class="highlight">
+            "Di antara banyak suara di dunia, hati ade selalu milih kamu."
+          </p>
+          <p>
+            "Kalau suatu hari nanti kamu capek, ingat aja: ada satu hati yang
+            selalu tetap di pihakmu."
+          </p>
+          <p class="highlight">
+            "Mungkin kita nggak sempurna, tapi rasa ade ke kamu selalu pulang ke
+            kata yang sama: bahagia."
+          </p>
+        </div>
+      </section>
+
+      <!-- GALLERY SECTION -->
+      <section class="card gallery-card reveal">
+        <h2>Manusia yang Paling Ade cintaii</h2>
+        <p class="gallery-text">
+          suaramu adalah lagu favoritku, senyummu adalah pemandangan terindah yang pernah aku lihat
+        </p>
+        <div class="photo-grid">
+          <figure class="photo-item">
+            <img src="foto/1.jpeg" alt="Foto 1" />
+          </figure>
+          <figure class="photo-item">
+            <img src="foto/2.jpeg" alt="Foto 2" />
+          </figure>
+          <figure class="photo-item">
+            <img src="foto/3.jpeg" alt="Foto 3" />
+          </figure>
+          <figure class="photo-item">
+            <img src="foto/4.jpeg" alt="Foto 4" />
+          </figure>
+        </div>
+      </section>
+
+      <!-- SYNCHRONIZED LYRICS + MUSIC PLAYER -->
+      <section class="card music-card reveal">
+        <h2>Play Ini Ya, Bang</h2>
+        <p class="music-note">
+          Tekan tombol play di bawah, lalu baca liriknya pelan-pelan sambil
+          dengerin lagunya.
+        </p>
+
+        <div class="lyrics-sync" id="lyricsSync">
+          <!-- Ubah angka di data-time sesuai detik mulai tiap baris -->
+          <p data-time="6">Jangan berhenti mencintaiku</p>
+          <p data-time="13">Meski mentari berhenti bersinar</p>
+          <p data-time="21">Jangan berubah sedikitpun</p>
+          <p data-time="29">Di dalam cintamu kutemukan bahagia</p>
+
+          <p data-time="31">Jangan berhenti mencintaiku</p>
+          <p data-time="38">Meski mentari berhenti bersinar</p>
+          <p data-time="44">Jangan berubah sedikitpun</p>
+          <p data-time="50">Di dalam cintamu ku temukan bahagia</p>
+        </div>
+
+        <div class="music-player">
+          <div class="disk" id="disk">
+            <div class="disk-center"></div>
+          </div>
+          <div class="controls">
+            <button id="playBtn" class="btn-play">
+              <i class="fas fa-play"></i>
+              <span class="btn-text">Play ini ya, Bang</span>
+            </button>
+            <div class="time-info">
+              <span id="currentTime">0:00</span>
+              <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+              </div>
+              <span id="duration">0:00</span>
+            </div>
+          </div>
+        </div>
+
+        <audio id="lagu" src="musik.mp3"></audio>
+      </section>
+
+      <!-- CLOSING SECTION -->
+      <section class="card closing-card reveal">
+        <p>Kalau suatu hari nanti abang ragu, ingat halaman ini.</p>
+        <p>
+          Di sini ada bukti kecil kalau ada satu hati yang selalu milih abang,
+          setiap hari, tanpa jeda.
+        </p>
+        <p class="signature">Dengan banyak sayang,<br />Ade ❤️</p>
+        <p class="meta">Created by your baby · Jadian sejak 10 Februari 2026</p>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

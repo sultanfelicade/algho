@@ -1,0 +1,458 @@
+/* Reset Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink-soft: #ffb6c1;
+    --pink-hot: #ff9a9e;
+    --pink-strong: #ff4f85;
+    --bg-deep: #080410;
+    --text-main: #fef5f8;
+    --text-subtle: #e0d4dd;
+}
+
+body {
+    background: radial-gradient(circle at top, #4c134f 0, #140718 45%, var(--bg-deep) 100%);
+    font-family: 'Quicksand', sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    overflow-x: hidden;
+    color: var(--text-main);
+}
+
+/* --- Soft Background Glow (modern instead of image bintang) --- */
+.stars, .twinkling {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+}
+
+.stars {
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255, 182, 193, 0.18) 0, transparent 55%),
+        radial-gradient(circle at 80% 90%, rgba(255, 154, 158, 0.22) 0, transparent 60%);
+    opacity: 0.8;
+    z-index: 0;
+}
+
+.twinkling {
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 0, transparent 45%),
+        radial-gradient(circle at 70% 20%, rgba(255, 192, 203, 0.3) 0, transparent 55%);
+    mix-blend-mode: screen;
+    z-index: 1;
+    animation: soft-glow 12s ease-in-out infinite alternate;
+    opacity: 0.7;
+}
+
+@keyframes soft-glow {
+    0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.55; }
+    50% { transform: translate3d(-8px, 6px, 0) scale(1.03); opacity: 0.8; }
+    100% { transform: translate3d(6px, -6px, 0) scale(1.02); opacity: 0.65; }
+}
+
+/* --- Container Utama --- */
+.container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 520px;
+    padding: 40px 18px 60px;
+    margin: 0 auto;
+}
+
+/* --- Efek Kaca (Glassmorphism) --- */
+.card {
+    background: linear-gradient(145deg, rgba(23, 8, 30, 0.96), rgba(10, 3, 18, 0.98));
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 24px 20px;
+    border: 1px solid rgba(255, 192, 203, 0.18);
+    box-shadow: 0 18px 32px rgba(1, 0, 8, 0.8);
+    text-align: center;
+    transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (hover: hover) {
+    .card:hover {
+        transform: translateY(-4px) scale(1.005);
+        box-shadow: 0 22px 42px rgba(0, 0, 0, 0.9);
+        border-color: rgba(255, 192, 203, 0.3);
+    }
+}
+
+.card + .card {
+    margin-top: 18px;
+}
+
+.heart-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    animation: beat 1.5s infinite;
+    filter: drop-shadow(0 0 8px rgba(255, 182, 193, 0.7));
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2rem;
+    background: linear-gradient(to right, #ff9a9e, #fecfef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.hero .header {
+    margin-bottom: 8px;
+}
+
+.hero .message {
+    margin-top: 4px;
+}
+
+.message p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--text-subtle);
+}
+
+.message b {
+    color: #ffd1dc;
+    font-weight: 700;
+}
+
+.message i {
+    color: #ffb6c1;
+}
+
+/* --- Lirik Lagu --- */
+.lyrics-container {
+    margin: 20px 0;
+    padding: 15px;
+    background: linear-gradient(135deg, rgba(29, 9, 30, 0.9), rgba(10, 3, 18, 0.95));
+    border-radius: 15px;
+    font-style: italic;
+    font-size: 0.85rem;
+    color: #d7c7d2;
+}
+
+.lyrics-container .highlight {
+    color: var(--pink-hot);
+    font-weight: bold;
+}
+
+.quote-card .lyrics-container {
+    position: relative;
+}
+
+.quote-card .lyrics-container::before {
+    content: "❤";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.1rem;
+    color: var(--pink-soft);
+    text-shadow: 0 0 8px rgba(255, 182, 193, 0.8);
+}
+
+/* --- Music Player UI --- */
+.music-player {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: 20px;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.18), rgba(255, 186, 205, 0.14));
+    padding: 12px 16px;
+    border-radius: 999px;
+    backdrop-filter: blur(18px);
+}
+
+/* Animasi Piringan Hitam */
+.disk {
+    width: 46px;
+    height: 46px;
+    background: #09030f;
+    border-radius: 50%;
+    background-image: repeating-radial-gradient(#111 0, #111 2px, #332 3px, #443 4px);
+    position: relative;
+    border: 2px solid var(--pink-hot);
+    box-shadow: 0 0 12px rgba(255, 154, 158, 0.7);
+}
+
+.disk.playing {
+    animation: rotate 3s linear infinite;
+}
+
+.disk-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: var(--pink-soft);
+    border-radius: 50%;
+}
+
+.btn-play {
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.3s, transform 0.15s ease, text-shadow 0.3s ease;
+}
+
+.btn-play:hover {
+    color: var(--pink-hot);
+    text-shadow: 0 0 8px rgba(255, 154, 158, 0.8);
+}
+
+.btn-play:active {
+    transform: scale(0.96);
+}
+
+/* Keyframes */
+@keyframes beat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.btn-text {
+    display: inline-block;
+}
+
+/* --- Gallery --- */
+.gallery-card h2,
+.music-card h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #ff9a9e, #fecfef);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.gallery-text {
+    font-size: 0.9rem;
+    color: var(--text-subtle);
+    margin-bottom: 18px;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.photo-item {
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transform: scale(1.02);
+    transition: transform 0.6s ease;
+}
+
+@media (hover: hover) {
+    .photo-item img:hover {
+        transform: scale(1.07);
+    }
+}
+
+/* --- Synced Lyrics --- */
+.music-note {
+    font-size: 0.85rem;
+    color: var(--text-subtle);
+    margin-bottom: 14px;
+}
+
+.lyrics-sync {
+    max-height: 220px;
+    overflow-y: auto;
+    padding: 12px 10px;
+    margin-top: 4px;
+    margin-bottom: 6px;
+    border-radius: 14px;
+    background: radial-gradient(circle at top, rgba(36, 10, 40, 0.9), rgba(5, 2, 10, 0.98));
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lyrics-sync p {
+    font-size: 0.9rem;
+    color: #d1c1cc;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    transition: color 0.3s ease, transform 0.3s ease, filter 0.3s ease, opacity 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    opacity: 0.25;
+    filter: blur(1px);
+    width: 100%;
+}
+
+.lyrics-sync p:last-child {
+    margin-bottom: 0;
+}
+
+.lyrics-sync p.active {
+    color: var(--pink-hot);
+    transform: translateX(4px);
+    font-weight: 600;
+    opacity: 1;
+    filter: blur(0);
+    background: rgba(255, 186, 205, 0.08);
+    padding: 4px 8px;
+    border-radius: 999px;
+}
+
+/* --- Time & Progress Bar --- */
+.time-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    margin-top: 6px;
+}
+
+.time-info span {
+    font-size: 0.75rem;
+    color: var(--text-subtle);
+}
+
+.progress-bar {
+    position: relative;
+    flex: 1;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #ff9a9e, #fecfef);
+}
+
+/* --- Closing Section --- */
+.closing-card p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--text-subtle);
+    margin-bottom: 14px;
+}
+
+.closing-card .signature {
+    margin-top: 8px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+    color: var(--pink-soft);
+}
+
+.closing-card .meta {
+    margin-top: 8px;
+    font-size: 0.8rem;
+    color: var(--text-subtle);
+    opacity: 0.85;
+}
+
+/* --- Scroll Reveal Animation --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* --- Floating Click Hearts --- */
+.click-heart {
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -20%) scale(0.4);
+    pointer-events: none;
+    font-size: 1.4rem;
+    color: var(--pink-hot);
+    text-shadow: 0 0 8px rgba(255, 154, 158, 0.9);
+    animation: heart-float 1s ease-out forwards;
+    z-index: 20;
+}
+
+@keyframes heart-float {
+    0% {
+        transform: translate(-50%, -20%) scale(0.4);
+        opacity: 1;
+    }
+    60% {
+        transform: translate(-50%, -80%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -130%) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* --- Responsive Tweaks --- */
+@media (min-width: 768px) {
+    body {
+        align-items: center;
+    }
+
+    .container {
+        padding: 60px 20px 80px;
+    }
+
+    .card {
+        padding: 28px 32px;
+    }
+
+    .music-player {
+        padding: 14px 20px;
+    }
+
+    .photo-grid {
+        gap: 14px;
+    }
+
+    .lyrics-sync {
+        max-height: 260px;
+    }
+}
