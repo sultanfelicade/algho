@@ -295,7 +295,7 @@ h1 {
 }
 
 .lyrics-sync {
-    max-height: 220px;
+    max-height: 60vh;
     overflow-y: auto;
     padding: 12px 10px;
     margin-top: 4px;
@@ -453,6 +453,6 @@ h1 {
     }
 
     .lyrics-sync {
-        max-height: 260px;
+        max-height: 55vh;
     }
 }
