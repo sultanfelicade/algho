@@ -103,18 +103,6 @@ function syncLyrics(currentTime) {
 
     if (activeLine) {
         activeLine.classList.add('active');
-
-        // Scroll pelan mengikuti lirik aktif
-        const containerTop = lyricsContainer.scrollTop;
-        const containerHeight = lyricsContainer.clientHeight;
-        const lineOffset = activeLine.offsetTop;
-        const lineHeight = activeLine.offsetHeight;
-        const targetScroll = lineOffset - containerHeight / 2 + lineHeight / 2;
-
-        lyricsContainer.scrollTo({
-            top: targetScroll,
-            behavior: 'smooth'
-        });
     }
 }
 
